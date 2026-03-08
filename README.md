@@ -1,3 +1,5 @@
 student marks prediction using ml
-i read the file + code and saw one file which is .pkl you have used serialization 
-which is good but you have a model which is just with 10 rows and 1 columns so can you try without serialization and do 
+
+The first program is a model training script that builds a machine learning model to predict student marks based on study hours. It reads the dataset from a CSV file containing `study_hours` and `marks`, then separates the data into input features (study hours) and the target variable (marks). Using the Linear Regression algorithm from scikit-learn, the model learns the relationship between how long a student studies and the marks they obtain. The dataset is split into training and testing sets to evaluate the model’s performance using metrics like R² score and mean absolute error. After training, the model is saved using joblib as a `.pkl` file so it can be reused later without retraining.
+
+The second program is a prediction script that loads the previously trained model and uses it to estimate marks for a given number of study hours entered by the user. It first connects to a SQLite database and creates a table to store prediction results if it does not already exist. After the user enters the number of study hours, the program uses the saved machine learning model to generate the predicted marks. The predicted result is displayed to the user and then stored in the database along with the input value and a timestamp. This allows the system to maintain a history of predictions for later analysis or tracking.

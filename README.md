@@ -4,7 +4,7 @@ The first program is a model training script that builds a machine learning mode
 
 The second program is a prediction script that loads the previously trained model and uses it to estimate marks for a given number of study hours entered by the user. It first connects to a SQLite database and creates a table to store prediction results if it does not already exist. After the user enters the number of study hours, the program uses the saved machine learning model to generate the predicted marks. The predicted result is displayed to the user and then stored in the database along with the input value and a timestamp. This allows the system to maintain a history of predictions for later analysis or tracking.
 
-**previous and enhanced model difference **
+previous and enhanced model difference 
 
 The previous model uses a hardcoded dataset directly inside the program, meaning the training data is manually written in the script. It trains the model and saves it using joblib, but it does not evaluate the model’s performance or handle errors. The prediction script simply loads the model, takes user input, predicts the marks, and stores the result in a basic SQLite table without additional information like timestamps or validation. This version works for simple demonstrations but is limited and not suitable for larger datasets or real-world applications.
 
